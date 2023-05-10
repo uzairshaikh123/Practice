@@ -1,20 +1,15 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 
-const userSchema=mongoose.Schema({
-    name : String,
-email :String,
-gender : String,
-password : String,
-age : Number,
-city : String,
-is_married : Boolean,
+const UserSchema = new mongoose.Schema({
+    "Email": String,
+    "Password":String,
+    "Confirm_Password": String,
 })
 
+const Usermodel = mongoose.model("usermockdata", UserSchema)
 
-const userModel=mongoose.model("userdataeval",userSchema)
-
-
-module.exports={
-    userModel
+module.exports = {
+    Usermodel
 }
+
